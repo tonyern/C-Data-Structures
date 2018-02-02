@@ -1,0 +1,6 @@
+int length = 0;
+	char* columnHolder = tony;
+	while (*columnHolder++ != '\0')
+	{
+		length++;
+	}
