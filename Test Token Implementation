@@ -1,0 +1,99 @@
+/*// Size of string of characters.
+	int length = 0;
+	// Temp array that holds the characters to count the length.
+	char* columnCounter = columns;
+	// Getting length of the string of columns.
+	while (*columnCounter++ != '\0')
+	{
+		length++;
+	}
+
+	// Holder arrays.
+	//char* columnHolder = columns;
+	char** holderColumns = new char*[length];
+	// Index to add to columns.
+	int setIndexName = 0;
+
+	// Parsing algorithm for columns.
+	for (int i = 0; i < length; i++)
+	{
+		// Compare character to comma and if it is not in there then add to holder.
+		if (columns[i] != ',')
+		{
+			// Add to holder. It adds just fine.
+			*holderColumns[i] = columns[i];
+		}
+		else
+		{
+			// Delete the last characters in holder that is the delimiter and continue splitting.
+			holderColumns[i] = '\0';
+			// Setting column name.
+			(*firstDF).setColName(setIndexName, *holderColumns); // holderColumns increment did something.
+			setIndexName++;
+		}
+	}
+
+	// Size of string of characters.
+	length = 0;
+	// Temp array that holds the characters to count the length.
+	char* rowCounter = rows;
+	// Getting length of the string of rows.
+	while (*rowCounter++ != '\0')
+	{
+		length++;
+	}
+
+	// Holder arrays.
+	char* holderRows = new char[length];
+	// Index to add to rows.
+	setIndexName = 0;
+
+	// Parsing algorithm for rows.
+	for (int i = 0; i < length; i++)
+	{
+		// Compare character to comma and if it is not in there then add to holder.
+		if (rows[i] != ',')
+		{
+			// Add to holder.
+			holderRows[i] = rows[i];
+		}
+		else
+		{
+			// Delete the last characters in holder and continue splitting.
+			holderRows[i] = NULL;
+			// Setting column name.
+			(*firstDF).setRowName(setIndexName, holderRows);
+			setIndexName++;
+		}
+	}*/
+
+	/*
+	// Delimiter is the character that determines the splitting.
+	char delimiter[] = ",";
+	// Counter for setting the row and column name to a position in the dataframe.
+	int setNameIndex = 0;
+	// Calling strtok to split the string of characters according to the delimiter which is comma in this case.
+	char* tokensColumn = strtok(columns, delimiter);
+
+	// Loop until we hit \0 as it is the end of the string of characters.
+	while (tokensColumn != NULL)
+	{
+		// Set the tokens splitted into column names in dataframe.
+		(*firstDF).setColName(setNameIndex, tokensColumn);
+		// Use character pointer to call function that parses the strings starting from where the splitting left off.
+		tokensColumn = strtok(NULL, delimiter);
+		setNameIndex++;
+	}
+
+	setNameIndex = 0;
+	// Calling strtok to split the string of characters according to the delimiter which is comma in this case.
+	char* tokensRow = strtok(rows, delimiter);
+	// Loop until we hit \0 as it is the end of the string of characters.
+	while (tokensRow != NULL)
+	{
+		// Set the tokens splitted into column names in dataframe.
+		(*firstDF).setRowName(setNameIndex, tokensRow);
+		// Use character pointer to call function that parses the strings starting from where the splitting left off.
+		tokensRow = strtok(NULL, delimiter);
+		setNameIndex++;
+	}*/
