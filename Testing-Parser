@@ -1,0 +1,34 @@
+// String of characters to test.
+	char tony[] = "Tony,Likes,Sweets";
+
+	// Size of string of characters.
+	int length = 0;
+	// Temp array that holds the characters to count the length.
+	char* columnCounter = tony;
+	// Getting length of the string of columns.
+	while (*columnCounter++ != '\0')
+	{
+		length++;
+	}
+
+	// Will store the characters without the commas.
+	char* columnHolder = tony;
+	char* holder = new char[length];
+
+	// Parsing algorithm.
+	for (int i = 0; i < length; i++)
+	{
+		// Compare character to comma and if it is not in there then add to holder.
+		if (columnHolder[i] != ',')
+		{
+			// Add to holder.
+			holder[i] = columnHolder[i];
+		}
+		else
+		{
+			// Setting column name.
+
+			// Delete the last characters in holder and continue splitting.
+			holder[i] = NULL;
+		}
+	}
