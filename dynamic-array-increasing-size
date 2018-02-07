@@ -1,0 +1,23 @@
+if (noRows <= rLen)
+	{
+		noRows = rLen;
+		// Create the bigger array.
+		char** temp = new char*[rLen];
+		for (int i = 0; i < rLen; i++)
+		{
+			temp[i] = new char[rLen];
+		}
+		// Copies rowNames into temp.
+		for (int i = 0; i < rLen; i++)
+		{
+			temp[i] = rowNames[i];
+		}
+
+		delete[] rowNames;
+		rowNames = temp;
+
+		for (int i = 0; i < rLen; i++)
+		{
+			cout << rowNames[i] << endl;
+		}
+	}
