@@ -1,0 +1,29 @@
+int binarySearch(int array[], int size, int searchValue)
+{
+	int low = 0;
+	int high = size - 1;
+
+	int mid;
+	mid = (low + high) / 2;
+
+	while (low <= high)
+	{
+		// If searchValue equals mid.
+		if (searchValue == array[mid])
+		{
+			return mid;
+		}
+		// Else if searchValue is greater than mid.
+		else if (searchValue > array[mid])
+		{
+			low = mid + 1;
+		}
+		// Else searchValue is less than mid.
+		else
+		{
+			high = mid - 1;
+		}
+	}
+	// If we can't find number.
+	return -1;
+}
